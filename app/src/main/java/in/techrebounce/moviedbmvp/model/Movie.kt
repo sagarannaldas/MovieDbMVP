@@ -1,6 +1,6 @@
 package `in`.techrebounce.moviedbmvp.model
 
-data class Result(
+data class Movie(
     val adult: Boolean,
     val backdrop_path: Any,
     val genre_ids: List<Int>,
