@@ -24,3 +24,14 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    constraintLayout_version = '2.0.2'
+    material_version = '1.2.1'
+    room_version = '2.2.5'
+    glide_version = '4.12.0'
+    retrofit_version = '2.9.0'
+    recyclerview_version = "1.1.0"
+    cardview_version = "1.0.0"
+    circleimageview_version = "3.1.0"
+}

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -42,4 +43,32 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // UI
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayout_version"
+    implementation "com.google.android.material:material:$material_version"
+
+    // CardView
+    implementation "androidx.cardview:cardview:$cardview_version"
+
+    //RecyclerView
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+
+    // retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+
+    // gson converter
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    // Room components
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    androidTestImplementation "androidx.room:room-testing:$room_version"
+
+    //CircleImageView
+    implementation "de.hdodenhof:circleimageview:$circleimageview_version"
 }
