@@ -36,16 +36,13 @@ class MovieListAdapter(movieList: List<Movie>, context: Context) :
         val movie = movieList[position]
         holder.textViewTitle.setText(movie.original_title)
         holder.textViewDate.setText(
-            R.string.date
-                .toString() + " " + movie.release_date
+            R.string.date.toString() + " " + movie.release_date
         )
         holder.textViewLanguage.setText(
-            R.string.language
-                .toString() + " " + movie.original_language
+            R.string.language.toString() + " " + movie.original_language
         )
         holder.textViewPopularity.setText(
-            R.string.popularity
-                .toString() + " " + movie.popularity
+            R.string.popularity.toString() + " " + movie.popularity
         )
         holder.textViewDescription.setText(movie.overview)
 
@@ -66,5 +63,4 @@ class MovieListAdapter(movieList: List<Movie>, context: Context) :
         val textViewDescription: TextView = itemView.findViewById(R.id.textViewDescription)
         val imageViewposter: CircleImageView = itemView.findViewById(R.id.imageView)
     }
-
 }

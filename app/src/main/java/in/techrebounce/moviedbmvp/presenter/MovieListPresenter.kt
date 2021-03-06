@@ -2,9 +2,9 @@ package `in`.techrebounce.moviedbmvp.presenter
 
 import `in`.techrebounce.moviedbmvp.contract.MovieListContract
 import `in`.techrebounce.moviedbmvp.model.Movie
+import `in`.techrebounce.moviedbmvp.service.MovieListModel
 
-class MoviePresenter(
-    movieListModel: MovieListContract.Model,
+class MovieListPresenter(
     movielistView: MovieListContract.View
 ) : MovieListContract.Presenter, MovieListContract.Model.OnFinishedListener {
 
@@ -12,7 +12,7 @@ class MoviePresenter(
     var movielistView: MovieListContract.View
 
     init {
-        this.movieListModel = movieListModel
+        this.movieListModel = MovieListModel()
         this.movielistView = movielistView
     }
 
