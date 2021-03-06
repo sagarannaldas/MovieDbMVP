@@ -7,16 +7,16 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ApiClient {
 
     companion object {
-        lateinit var _retrofit: Retrofit
+       private lateinit var retrofit: Retrofit
 
         fun getClient(): Retrofit {
-            if (_retrofit == null) {
-                _retrofit = Retrofit.Builder()
+            if (retrofit == null) {
+                retrofit = Retrofit.Builder()
                     .baseUrl(Constants.BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
             }
-            return _retrofit
+            return retrofit
         }
     }
 }
