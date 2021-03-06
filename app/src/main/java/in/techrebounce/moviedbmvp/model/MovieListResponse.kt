@@ -1,4 +1,4 @@
-package in.techrebounce.moviedbmvp.model
+package `in`.techrebounce.moviedbmvp.model
 
 data class MovieListResponse(
     val dates: Dates,
