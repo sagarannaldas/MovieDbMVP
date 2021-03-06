@@ -16,13 +16,11 @@ class MoviePresenter(
         this.movielistView = movielistView
     }
 
-
     override fun onDestroy() {
-
     }
 
     override fun getMoreData(pageNo: Int) {
-        if(movielistView != null) {
+        if (movielistView != null) {
             movielistView.showProgress()
         }
         movieListModel.getMovieList(this, pageNo)
@@ -30,17 +28,17 @@ class MoviePresenter(
     }
 
     override fun requestDataFromServer() {
-        if(movielistView != null) {
+        if (movielistView != null) {
             movielistView.showProgress()
         }
 
-        movieListModel.getMovieList(this,1)
+        movieListModel.getMovieList(this, 1)
 
     }
 
     override fun onFinished(movieArrayList: List<Movie>) {
         movielistView.setDataToRecyclerView(movieArrayList)
-        if(movielistView != null) {
+        if (movielistView != null) {
             movielistView.hideProgress()
         }
     }
