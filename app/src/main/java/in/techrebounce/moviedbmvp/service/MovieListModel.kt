@@ -25,7 +25,7 @@ class MovieListModel : MovieListContract.Model {
     ) {
         var apiService: ApiInterface = ApiClient.getClient().create(ApiInterface::class.java)
 
-        var call: Call<MovieListResponse> = apiService.getMovieList(Constants.API_KEY, pageNo, Constants.REGION)
+        var call: Call<MovieListResponse> = apiService.getMovieList(Constants.API_KEY, pageNo , Constants.REGION)
 
         call.enqueue(object : Callback<MovieListResponse> {
 

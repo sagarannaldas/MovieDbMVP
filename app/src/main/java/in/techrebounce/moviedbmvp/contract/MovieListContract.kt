@@ -9,7 +9,6 @@ interface MovieListContract {
             fun onFinished(movieArrayList: List<Movie>)
             fun onFailure(t: Throwable)
         }
-
         fun getMovieList(onFinishedListener: OnFinishedListener, pageNo: Int)
     }
 
