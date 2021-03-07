@@ -5,7 +5,6 @@ class Constants {
         const val BASE_URL = "https://api.themoviedb.org/3/"
         const val API_KEY = "ec733b1a4e49d73aa9cd6b1d41dcc6f6"
         const val IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original"
-        const val IMAGE_BASE_URL1 = "https://image.tmdb.org/t/p/w200"
         const val REGION = "IN"
     }
 

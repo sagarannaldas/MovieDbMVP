@@ -62,6 +62,6 @@ class MainActivity : AppCompatActivity(), MovieListContract.View {
 
     override fun onResponseFailure(t: Throwable) {
         Log.d(TAG, "onResponseFailure: ${t.message}")
-        Toast.makeText(this, "Error getting data", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Network mode is offline", Toast.LENGTH_SHORT).show()
     }
 }

@@ -4,7 +4,6 @@ import `in`.techrebounce.moviedbmvp.contract.MovieListContract
 import `in`.techrebounce.moviedbmvp.model.Movie
 import `in`.techrebounce.moviedbmvp.service.MovieListModel
 import android.app.Application
-import android.content.Context
 
 class MovieListPresenter(
     movielistView: MovieListContract.View,
