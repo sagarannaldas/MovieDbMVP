@@ -43,10 +43,12 @@ class MovieListModel(application: Application) : MovieListContract.Model {
                     movieDatabase.movieDao().insert(movies)
                 }
                 movieList = movieDatabase.movieDao().getAll()
+
                 if (movieList.isNotEmpty()) {
                     Log.d(TAG, "onResponse: online $movieList")
                     onFinishedListener.onFinished(movieList)
                 }
+
             }
 
             override fun onFailure(call: Call<MovieListResponse>, t: Throwable) {

@@ -17,27 +17,13 @@ class MovieListPresenter(
     init {
         this.movieListModel = MovieListModel(applicationContext1)
         this.movielistView = movielistView
-
-    }
-
-    override fun onDestroy() {
-    }
-
-    override fun getMoreData(pageNo: Int) {
-        if (movielistView != null) {
-            movielistView.showProgress()
-        }
-        movieListModel.getMovieList(this, pageNo)
-
     }
 
     override fun requestDataFromServer() {
         if (movielistView != null) {
             movielistView.showProgress()
         }
-
         movieListModel.getMovieList(this, 1)
-
     }
 
     override fun onFinished(movieArrayList: List<Movie>) {
