@@ -4,21 +4,27 @@ import `in`.techrebounce.moviedbmvp.contract.MovieListContract
 import `in`.techrebounce.moviedbmvp.model.Movie
 import `in`.techrebounce.moviedbmvp.presenter.MovieListPresenter
 import `in`.techrebounce.moviedbmvp.view.MovieListAdapter
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity(), MovieListContract.View {
 
+    companion object {
+        private const val TAG = "MainActivity"
+    }
+
     private lateinit var movieListPresenter: MovieListPresenter
     private lateinit var recyclerView: RecyclerView
-    private var movieArrayList = ArrayList<Movie>()
+    private lateinit var movieArrayList: List<Movie>
     private lateinit var progressBar: ProgressBar
     private var pageNo = 1
-    private val movieListAdapter: MovieListAdapter = TODO()
+    private lateinit var movieListAdapter: MovieListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,17 +32,15 @@ class MainActivity : AppCompatActivity(), MovieListContract.View {
         bindViews()
         movieListPresenter = MovieListPresenter(this)
         movieListPresenter.requestDataFromServer()
-        setupRecyclerView()
     }
 
     private fun bindViews() {
         recyclerView = findViewById(R.id.recyclerView)
         progressBar = findViewById(R.id.progressBar)
-
     }
 
     private fun setupRecyclerView() {
-        val MovieListAdapter = MovieListAdapter(movieArrayList, this)
+        var MovieListAdapter = MovieListAdapter(movieArrayList, this)
         val linearLayoutManager = LinearLayoutManager(this)
         linearLayoutManager.orientation = RecyclerView.VERTICAL
         recyclerView.layoutManager = linearLayoutManager
@@ -44,18 +48,20 @@ class MainActivity : AppCompatActivity(), MovieListContract.View {
     }
 
     override fun showProgress() {
-
+        progressBar.visibility = View.VISIBLE
     }
 
     override fun hideProgress() {
-        TODO("Not yet implemented")
+        progressBar.visibility = View.GONE
     }
 
     override fun setDataToRecyclerView(movieArrayList: List<Movie>) {
-
+        this.movieArrayList = movieArrayList
+        setupRecyclerView()
     }
 
     override fun onResponseFailure(t: Throwable) {
-        TODO("Not yet implemented")
+        Log.d(TAG, "onResponseFailure: ${t.message}")
+        Toast.makeText(this, "Error getting data", Toast.LENGTH_SHORT).show()
     }
 }

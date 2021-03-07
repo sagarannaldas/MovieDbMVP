@@ -13,7 +13,7 @@ import retrofit2.Response
 
 class MovieListModel : MovieListContract.Model {
 
-    var pageNo = 1
+    private var pageNo = 1
 
     companion object {
         private const val TAG = "MovieListModel"

@@ -8,8 +8,8 @@ class MovieListPresenter(
     movielistView: MovieListContract.View
 ) : MovieListContract.Presenter, MovieListContract.Model.OnFinishedListener {
 
-    var movieListModel: MovieListContract.Model
-    var movielistView: MovieListContract.View
+    private var movieListModel: MovieListContract.Model
+    private var movielistView: MovieListContract.View
 
     init {
         this.movieListModel = MovieListModel()

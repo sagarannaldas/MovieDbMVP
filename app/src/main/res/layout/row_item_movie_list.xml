@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
-    android:layout_height="500dp"
+    android:layout_height="wrap_content"
     android:background="@color/colorCardView"
     android:orientation="vertical"
     android:padding="10dp"
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorCardView">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="300dp"
@@ -43,10 +43,19 @@
             android:textColor="@color/white" />
 
         <LinearLayout
-            android:id="@+id/linearlayout"
+            android:id="@+id/linearlayoutline1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textViewDate"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="1dp" />
+
+        <LinearLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearlayoutline1"
             android:layout_margin="4dp"
             android:orientation="horizontal"
             android:weightSum="2">
@@ -68,11 +77,20 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/linearlayoutline2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearlayout"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="1dp" />
+
         <TextView
             android:id="@+id/textViewDescription"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/linearlayout"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearlayoutline2"
             android:layout_margin="4dp"
             android:maxLines="6"
             android:textColor="@color/white" />
@@ -81,16 +99,3 @@
 
 </androidx.cardview.widget.CardView>
 
-<!--
- "id": 800613,
-            "original_language": "ta",
-            "original_title": "சங்கத்தலைவன்",
-            "overview": "A socialist takes on a ruthless factory owner after the latter murders his former employee.",
-            "popularity": 3.356,
-            "poster_path": "/6i44RWeqcI0LJcJ1spV2hLpdRdc.jpg",
-            "release_date": "2021-02-26",
-            "title": "Sangathalaivan",
-            "video": false,
-            "vote_average": 0,
-            "vote_count": 0
-->
