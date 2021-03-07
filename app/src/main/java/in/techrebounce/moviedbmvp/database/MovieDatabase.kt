@@ -3,7 +3,6 @@ package `in`.techrebounce.moviedbmvp.database
 import `in`.techrebounce.moviedbmvp.dao.MovieDao
 import `in`.techrebounce.moviedbmvp.model.Movie
 import android.content.Context
-import android.os.AsyncTask
 import androidx.annotation.NonNull
 import androidx.room.Database
 import androidx.room.Room
@@ -34,22 +33,17 @@ abstract class MovieDatabase : RoomDatabase() {
         var callback: Callback = object : Callback() {
             override fun onOpen(@NonNull db: SupportSQLiteDatabase) {
                 super.onOpen(db)
-                PopulateDbAsyn(INSTANCE)
+                PopulateDb(INSTANCE)
             }
         }
     }
 
-    internal class PopulateDbAsyn(movieDatabase: MovieDatabase) : AsyncTask<Void, Void, Void>() {
-        private val movieDao: MovieDao
-
-        init {
+    class PopulateDb(movieDatabase: MovieDatabase) : Runnable {
+        var movieDatabase: MovieDatabase = movieDatabase
+        override fun run() {
+            var movieDao: MovieDao
             movieDao = movieDatabase.movieDao()
-        }
-
-        override fun doInBackground(vararg voids: Void): Void? {
             movieDao.deleteAll()
-            return null
         }
     }
-
 }
