@@ -34,11 +34,20 @@
             android:textSize="22dp"
             android:textStyle="bold" />
 
+        <LinearLayout
+            android:id="@+id/linearlayoutline0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewMovieTitle"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="1dp" />
+
         <TextView
             android:id="@+id/textViewDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewMovieTitle"
+            android:layout_below="@+id/linearlayoutline0"
             android:layout_margin="4dp"
             android:textColor="@color/white" />
 
