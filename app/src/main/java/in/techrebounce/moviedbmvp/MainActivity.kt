@@ -19,18 +19,17 @@ class MainActivity : AppCompatActivity(), MovieListContract.View {
         private const val TAG = "MainActivity"
     }
 
+
     private lateinit var movieListPresenter: MovieListPresenter
     private lateinit var recyclerView: RecyclerView
     private lateinit var movieArrayList: List<Movie>
     private lateinit var progressBar: ProgressBar
-    private var pageNo = 1
-    private lateinit var movieListAdapter: MovieListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bindViews()
-        movieListPresenter = MovieListPresenter(this)
+        movieListPresenter = MovieListPresenter(this, application)
         movieListPresenter.requestDataFromServer()
     }
 
@@ -44,6 +43,7 @@ class MainActivity : AppCompatActivity(), MovieListContract.View {
         val linearLayoutManager = LinearLayoutManager(this)
         linearLayoutManager.orientation = RecyclerView.VERTICAL
         recyclerView.layoutManager = linearLayoutManager
+        recyclerView.hasFixedSize()
         recyclerView.adapter = MovieListAdapter
     }
 

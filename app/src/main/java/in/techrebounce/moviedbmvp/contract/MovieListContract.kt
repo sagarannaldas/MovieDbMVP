@@ -1,6 +1,7 @@
 package `in`.techrebounce.moviedbmvp.contract
 
 import `in`.techrebounce.moviedbmvp.model.Movie
+import android.app.Application
 
 interface MovieListContract {
 
@@ -9,7 +10,9 @@ interface MovieListContract {
             fun onFinished(movieArrayList: List<Movie>)
             fun onFailure(t: Throwable)
         }
+
         fun getMovieList(onFinishedListener: OnFinishedListener, pageNo: Int)
+        fun insert(movieList: List<Movie>)
     }
 
     interface View {

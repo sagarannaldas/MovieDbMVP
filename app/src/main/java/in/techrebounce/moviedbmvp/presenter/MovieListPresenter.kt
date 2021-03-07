@@ -3,17 +3,22 @@ package `in`.techrebounce.moviedbmvp.presenter
 import `in`.techrebounce.moviedbmvp.contract.MovieListContract
 import `in`.techrebounce.moviedbmvp.model.Movie
 import `in`.techrebounce.moviedbmvp.service.MovieListModel
+import android.app.Application
+import android.content.Context
 
 class MovieListPresenter(
-    movielistView: MovieListContract.View
+    movielistView: MovieListContract.View,
+    applicationContext: Application
 ) : MovieListContract.Presenter, MovieListContract.Model.OnFinishedListener {
 
     private var movieListModel: MovieListContract.Model
     private var movielistView: MovieListContract.View
+    private var applicationContext1 = applicationContext
 
     init {
-        this.movieListModel = MovieListModel()
+        this.movieListModel = MovieListModel(applicationContext1)
         this.movielistView = movielistView
+
     }
 
     override fun onDestroy() {

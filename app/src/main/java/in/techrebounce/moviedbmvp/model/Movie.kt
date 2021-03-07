@@ -8,14 +8,6 @@ import androidx.room.PrimaryKey
 data class Movie(
     @PrimaryKey(autoGenerate = true)
     var movie_id: Int? = null,
-    @ColumnInfo(name = "adult")
-    val adult: Boolean,
-    @ColumnInfo(name = "backdrop_path")
-    val backdrop_path: Any,
-    @ColumnInfo(name = "genre_ids")
-    val genre_ids: List<Int>,
-    @ColumnInfo(name = "id")
-    val id: Int,
     @ColumnInfo(name = "original_language")
     val original_language: String,
     @ColumnInfo(name = "original_title")
@@ -30,7 +22,6 @@ data class Movie(
     val release_date: String,
     @ColumnInfo(name = "title")
     val title: String,
-    @ColumnInfo(name = "video")
     val video: Boolean,
     @ColumnInfo(name = "vote_average")
     val vote_average: Double,

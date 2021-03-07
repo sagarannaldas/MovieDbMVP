@@ -63,4 +63,8 @@ class MovieListAdapter(movieList: List<Movie>, context: Context) :
         val textViewDescription: TextView = itemView.findViewById(R.id.textViewDescription)
         val imageViewposter: ImageView = itemView.findViewById(R.id.imageView)
     }
+
+    fun getAllMovies(movieList: List<Movie>) {
+        this.movieList = movieList
+    }
 }
