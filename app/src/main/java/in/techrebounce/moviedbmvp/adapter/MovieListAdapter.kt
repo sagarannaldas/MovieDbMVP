@@ -53,7 +53,7 @@ class MovieListAdapter(movieList: List<Movie>, context: Context) :
 
         val movieImageUrl = Constants.IMAGE_BASE_URL + movie.poster_path
 
-        Glide.with(holder.itemView).load(movieImageUrl).into(holder.imageViewposter)
+        Glide.with(holder.itemView).load(movieImageUrl).into(holder.imageViewPoster)
     }
 
     override fun getItemCount(): Int {
@@ -67,7 +67,7 @@ class MovieListAdapter(movieList: List<Movie>, context: Context) :
         val textViewPopularity: TextView = itemView.findViewById(R.id.textViewPopularity)
         val textViewDescription: TextView = itemView.findViewById(R.id.textViewDescription)
         val textViewEnglishTitle: TextView = itemView.findViewById(R.id.textViewEnglititle)
-        val imageViewposter: ImageView = itemView.findViewById(R.id.imageView)
+        val imageViewPoster: ImageView = itemView.findViewById(R.id.imageView)
     }
 
 }
