@@ -38,13 +38,18 @@ class MovieListAdapter(movieList: List<Movie>, context: Context) :
         holder.textViewDate.setText(
             "${context.getString(R.string.date)}  ${movie.release_date}"
         )
+        holder.textViewEnglishTitle.setText(
+            "${context.getString(R.string.english_title)}  ${movie.title}"
+        )
         holder.textViewLanguage.setText(
             "${context.getString(R.string.language)}  ${movie.original_language}"
         )
         holder.textViewPopularity.setText(
             "${context.getString(R.string.popularity)}  ${movie.popularity}"
         )
-        holder.textViewDescription.setText("${context.getString(R.string.description)} ${movie.overview}")
+        holder.textViewDescription.setText(
+            "${context.getString(R.string.description)} ${movie.overview}"
+        )
 
         val movieImageUrl = Constants.IMAGE_BASE_URL + movie.poster_path
 
@@ -61,6 +66,7 @@ class MovieListAdapter(movieList: List<Movie>, context: Context) :
         val textViewLanguage: TextView = itemView.findViewById(R.id.textViewLanguage)
         val textViewPopularity: TextView = itemView.findViewById(R.id.textViewPopularity)
         val textViewDescription: TextView = itemView.findViewById(R.id.textViewDescription)
+        val textViewEnglishTitle: TextView = itemView.findViewById(R.id.textViewEnglititle)
         val imageViewposter: ImageView = itemView.findViewById(R.id.imageView)
     }
 

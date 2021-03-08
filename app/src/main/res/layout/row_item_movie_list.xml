@@ -43,19 +43,36 @@
             android:orientation="horizontal"
             android:padding="1dp" />
 
-        <TextView
-            android:id="@+id/textViewDate"
+        <LinearLayout
+            android:id="@+id/linearlayout0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/linearlayoutline0"
             android:layout_margin="4dp"
-            android:textColor="@color/white" />
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/textViewDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/textViewEnglititle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearlayoutline1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewDate"
+            android:layout_below="@+id/linearlayout0"
             android:background="@color/white"
             android:orientation="horizontal"
             android:padding="1dp" />

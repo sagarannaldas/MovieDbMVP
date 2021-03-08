@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorCardView">#6E464D</color>
     <color name="colorLayoutBackground">#23191B</color>
+    <color name="brown_dark">#4f3338</color>
+    <color name="brown_dark1">#452b2f</color>
+    <color name="brown_dark2">#361d21</color>
 </resources>
