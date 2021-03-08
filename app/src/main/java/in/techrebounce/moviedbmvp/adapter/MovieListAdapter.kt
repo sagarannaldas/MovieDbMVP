@@ -1,4 +1,4 @@
-package `in`.techrebounce.moviedbmvp.view
+package `in`.techrebounce.moviedbmvp.adapter
 
 import `in`.techrebounce.moviedbmvp.R
 import `in`.techrebounce.moviedbmvp.model.Movie

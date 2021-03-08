@@ -1,9 +1,10 @@
-package `in`.techrebounce.moviedbmvp
+package `in`.techrebounce.moviedbmvp.view
 
+import `in`.techrebounce.moviedbmvp.R
 import `in`.techrebounce.moviedbmvp.contract.MovieListContract
 import `in`.techrebounce.moviedbmvp.model.Movie
 import `in`.techrebounce.moviedbmvp.presenter.MovieListPresenter
-import `in`.techrebounce.moviedbmvp.view.MovieListAdapter
+import `in`.techrebounce.moviedbmvp.adapter.MovieListAdapter
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -18,7 +19,6 @@ class MainActivity : AppCompatActivity(), MovieListContract.View {
     companion object {
         private const val TAG = "MainActivity"
     }
-
 
     private lateinit var movieListPresenter: MovieListPresenter
     private lateinit var recyclerView: RecyclerView
