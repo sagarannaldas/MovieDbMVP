@@ -83,6 +83,7 @@ class MovieListModel(application: Application) : MovieListContract.Model {
                         movieList = movieDatabase.movieDao().getAll()
                         if (movieList.isNotEmpty()) {
                             onFinishedListener.onFinished(movieList)
+                            onFinishedListener.onFailure(t)
                         } else {
                             onFinishedListener.onFailure(t)
                         }
